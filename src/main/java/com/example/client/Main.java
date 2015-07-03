@@ -97,11 +97,6 @@ public class Main extends Composite {
         return (PaperCheckboxElement) DOM.getChild(h4, 0);
     }
 
-    private native void log(Object o) /*-{
-        console.log(o);
-        console.dir(o);
-    }-*/;
-
     private void addItem(String title, String description) {
         Item item = new Item();
         item.setTitle(title);
