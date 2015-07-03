@@ -40,14 +40,29 @@ public class Item {
         });
     }
 
+    public String getTitle() {
+        return title.getInnerText();
+    }
+
     public void setTitle(String s) {
         title.setInnerText(s);
+    }
+
+    public String getDescription() {
+        return description.getInnerText();
     }
 
     public void setDescription(String s) {
         description.setInnerText(s);
     }
 
+    public boolean isDone() {
+        return done.getActive();
+    }
+
+    public void setDone(boolean b) {
+        done.setActive(b);
+    }
 
     public DivElement getElement() {
         return element;
