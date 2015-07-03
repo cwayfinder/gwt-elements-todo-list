@@ -17,7 +17,7 @@ public class Item {
     }
 
     private static ItemUiBinder ourUiBinder = GWT.create(ItemUiBinder.class);
-    
+
     @UiField
     Element title;
     @UiField
@@ -39,6 +39,15 @@ public class Item {
             }
         });
     }
+
+    public void setTitle(String s) {
+        title.setInnerText(s);
+    }
+
+    public void setDescription(String s) {
+        description.setInnerText(s);
+    }
+
 
     public DivElement getElement() {
         return element;
