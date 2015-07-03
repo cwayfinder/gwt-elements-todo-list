@@ -3,11 +3,13 @@ package com.example.client;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HTMLPanel;
 import com.vaadin.polymer.elemental.*;
 import com.vaadin.polymer.paper.element.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main extends Composite {
     interface MainUiBinder extends UiBinder<HTMLPanel, Main> {
@@ -36,6 +38,8 @@ public class Main extends Composite {
     PaperTextareaElement descriptionInput;
     @UiField
     PaperButtonElement confirmAddButton;
+
+    private List<Item> items = new ArrayList<>();
 
     public Main() {
         initWidget(ourUiBinder.createAndBindUi(this));
@@ -75,12 +79,10 @@ public class Main extends Composite {
             public void handleEvent(Event event) {
                 closeMenu();
 
-                NodeList<Element> list = content.querySelectorAll("div.item");
-                for (int i = list.getLength() - 1; i > -1; i--) {
-                    Element child = list.item(i);
-                    PaperCheckboxElement checkbox = child.querySelector("paper-checkbox");
-                    if (checkbox.getChecked()) {
-                        content.removeChild(child);
+                for (Item item : items) {
+                    if (item.isDone()) {
+                        content.removeChild(item.getElement());
+                        items.remove(item);
                     }
                 }
             }
@@ -92,6 +94,7 @@ public class Main extends Composite {
         item.setTitle(title);
         item.setDescription(description);
         content.appendChild(item.getElement());
+        items.add(item);
     }
 
     private void closeMenu() {
