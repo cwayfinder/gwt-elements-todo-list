@@ -5,14 +5,9 @@ import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
-import com.google.gwt.uibinder.client.UiHandler;
-import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HTMLPanel;
 import com.vaadin.polymer.elemental.Event;
 import com.vaadin.polymer.elemental.EventListener;
-import com.vaadin.polymer.iron.widget.event.IronChangeEvent;
 import com.vaadin.polymer.paper.element.PaperCheckboxElement;
-import com.vaadin.polymer.paper.widget.PaperCheckbox;
 
 public class Item {
 
@@ -43,30 +38,6 @@ public class Item {
                 }
             }
         });
-    }
-
-    public String getTitle() {
-        return title.getInnerText();
-    }
-
-    public void setTitle(String s) {
-        title.setInnerText(s);
-    }
-
-    public String getDescription() {
-        return description.getInnerText();
-    }
-
-    public void setDescription(String s) {
-        description.setInnerText(s);
-    }
-    
-    public boolean isDone() {
-        return done.getActive();
-    }
-
-    public void setDone(boolean b) {
-        done.setActive(b);
     }
 
     public DivElement getElement() {
