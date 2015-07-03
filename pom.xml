@@ -96,7 +96,7 @@
           <!-- Tests patterns -->
           <includes>**/Test*.java,**/*Test.java,**/*TestCase.java</includes>
 
-          <!--<jsInteropMode>JS</jsInteropMode>-->
+          <jsInteropMode>JS</jsInteropMode>
         </configuration>
       </plugin>
 
