@@ -2,7 +2,7 @@
 			 xmlns:g='urn:import:com.google.gwt.user.client.ui'
 			 xmlns:p='urn:import:com.vaadin.polymer.paper.widget'>
 
-    <div class="vertical center-justified layout">
+    <div class="item vertical center-justified layout">
         <style>
 	        .title {
 	          padding-left: 20px;
