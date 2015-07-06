@@ -27,7 +27,8 @@ public class TodoList implements EntryPoint {
                 PaperDialogElement.SRC,
                 PaperInputElement.SRC,
                 PaperTextareaElement.SRC,
-                PaperCheckboxElement.SRC), new Function() {
+                PaperCheckboxElement.SRC,
+                PaperButtonElement.SRC), new Function() {
             public Object call(Object arg) {
                 // The app is executed when all imports succeed.
                 startApplication();
